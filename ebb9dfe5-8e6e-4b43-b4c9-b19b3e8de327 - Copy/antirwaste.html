@@ -1,0 +1,2811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anti-Waste Mokopane | Professional Waste Management & Recycling Since 1999</title>
+    
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="Anti-Waste Mokopane - Established 1999. Professional waste management and recycling services. Serving 140+ customers daily with 80+ employees. K4, Paper, Plastic recycling.">
+    <meta name="keywords" content="waste management, recycling, Mokopane, anti-waste, buy back centre, cardboard recycling, plastic recycling, paper recycling">
+    <meta name="author" content="Mark Scholtz">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Anti-Waste Mokopane - Waste Management & Recycling">
+    <meta property="og:description" content="Professional waste management services since 1999. Environmental sustainability through recycling.">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* ============================================
+           CSS VARIABLES & ROOT SETTINGS
+           ============================================ */
+        :root {
+            /* Primary Colors */
+            --primary-green: #1B5E20;
+            --secondary-green: #2E7D32;
+            --light-green: #4CAF50;
+            --accent-green: #66BB6A;
+            --pale-green: #C8E6C9;
+            
+            /* Accent Colors */
+            --accent-orange: #FF6B35;
+            --accent-yellow: #FFA726;
+            
+            /* Neutral Colors */
+            --dark-text: #212121;
+            --medium-text: #616161;
+            --light-text: #9E9E9E;
+            --white: #FFFFFF;
+            --off-white: #FAFAFA;
+            --light-bg: #F5F5F5;
+            
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+            --gradient-accent: linear-gradient(135deg, var(--accent-orange), var(--accent-yellow));
+            --gradient-hero: linear-gradient(135deg, rgba(27,94,32,0.95), rgba(46,125,50,0.9));
+            
+            /* Shadows */
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+            --shadow-md: 0 8px 24px rgba(0,0,0,0.12);
+            --shadow-lg: 0 16px 48px rgba(0,0,0,0.15);
+            --shadow-xl: 0 24px 64px rgba(0,0,0,0.2);
+            --shadow-hover: 0 20px 60px rgba(0,0,0,0.25);
+            
+            /* Border Radius */
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 30px;
+            --radius-full: 50%;
+            
+            /* Transitions */
+            --transition-fast: 0.3s ease;
+            --transition-normal: 0.5s ease;
+            --transition-slow: 0.8s ease;
+        }
+
+        /* ============================================
+           RESET & BASE STYLES
+           ============================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--dark-text);
+            line-height: 1.7;
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition-fast);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* ============================================
+           UTILITY CLASSES
+           ============================================ */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-padding {
+            padding: 7rem 0;
+        }
+
+        .text-center { text-align: center; }
+        .text-white { color: var(--white); }
+        
+        /* Gradient Text */
+        .gradient-text {
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ============================================
+           NAVIGATION BAR
+           ============================================ */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(20px);
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-normal);
+            padding: 1rem 0;
+        }
+
+        .navbar.scrolled {
+            padding: 0.7rem 0;
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-container {
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--primary-green);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo i {
+            font-size: 2.5rem;
+            color: var(--accent-orange);
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--dark-text);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--gradient-accent);
+            transition: width var(--transition-fast);
+            border-radius: 2px;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-green);
+        }
+
+        .nav-cta {
+            background: var(--gradient-primary);
+            color: var(--white) !important;
+            padding: 0.75rem 1.75rem !important;
+            border-radius: var(--radius-xl);
+            font-weight: 700 !important;
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-fast) !important;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md) !important;
+        }
+
+        .nav-cta::after {
+            display: none !important;
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-toggle {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--primary-green);
+        }
+
+        /* ============================================
+           HERO SECTION
+           ============================================ */
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 80px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 50%, #a5d6a7 100%);
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://z-cdn-media.chatglm.cn/files/8a2f5528-15f3-443b-87e4-9fd8be4301f5.png?auth_key=1884992677-8cd2b2ad29ac4ad98897280d51045c7c-0-e2729015ea699ee839c6557a91917ae2') center/cover no-repeat;
+            opacity: 0.12;
+            animation: heroZoom 25s ease-in-out infinite alternate;
+        }
+
+        @keyframes heroZoom {
+            from { transform: scale(1); }
+            to { transform: scale(1.15); }
+        }
+
+        .hero-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: rgba(76, 175, 80, 0.3);
+            border-radius: 50% 0 50% 0;
+            animation: floatParticle 15s infinite ease-in-out;
+        }
+
+        .particle:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 18s; }
+        .particle:nth-child(2) { left: 25%; animation-delay: 3s; animation-duration: 20s; }
+        .particle:nth-child(3) { left: 45%; animation-delay: 6s; animation-duration: 16s; }
+        .particle:nth-child(4) { left: 65%; animation-delay: 9s; animation-duration: 22s; }
+        .particle:nth-child(5) { left: 85%; animation-delay: 12s; animation-duration: 19s; }
+        .particle:nth-child(6) { left: 35%; animation-delay: 2s; animation-duration: 17s; }
+        .particle:nth-child(7) { left: 55%; animation-delay: 7s; animation-duration: 21s; }
+        .particle:nth-child(8) { left: 75%; animation-delay: 11s; animation-duration: 23s; }
+
+        @keyframes floatParticle {
+            0%, 100% { 
+                transform: translateY(100vh) rotate(0deg) scale(1);
+                opacity: 0;
+            }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { 
+                transform: translateY(-100px) rotate(720deg) scale(0.5);
+                opacity: 0;
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 1100px;
+            padding: 2rem;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--white);
+            color: var(--primary-green);
+            padding: 0.85rem 2rem;
+            border-radius: var(--radius-xl);
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-md);
+            animation: fadeInDown 1s ease both;
+        }
+
+        .hero-badge i {
+            color: var(--accent-orange);
+            font-size: 1.2rem;
+        }
+
+        .hero-title {
+            font-size: 5rem;
+            font-weight: 900;
+            color: var(--primary-green);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            animation: fadeInUp 1s ease 0.2s both;
+            text-shadow: 2px 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .hero-subtitle {
+            font-size: 1.65rem;
+            color: var(--medium-text);
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+            line-height: 1.6;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 1.15rem 2.75rem;
+            border-radius: var(--radius-xl);
+            font-weight: 700;
+            font-size: 1.05rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-fast);
+            border: none;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--primary-green);
+            padding: 1.15rem 2.75rem;
+            border-radius: var(--radius-xl);
+            font-weight: 700;
+            font-size: 1.05rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-fast);
+            border: 3px solid var(--primary-green);
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            background: var(--primary-green);
+            color: var(--white);
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+            animation: fadeInUp 1s ease 0.8s both;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            transition: all var(--transition-fast);
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .stat-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--accent-orange);
+            display: block;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--medium-text);
+            font-weight: 600;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ============================================
+           ABOUT SECTION
+           ============================================ */
+        .about {
+            background: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .about-content {
+            position: relative;
+        }
+
+        .about-subtitle {
+            display: inline-block;
+            color: var(--accent-orange);
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .about-title {
+            font-size: 3.2rem;
+            color: var(--primary-green);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .about-description {
+            font-size: 1.15rem;
+            color: var(--medium-text);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.25rem;
+            margin-bottom: 1.5rem;
+            padding: 1.25rem;
+            background: var(--light-bg);
+            border-radius: var(--radius-md);
+            transition: all var(--transition-fast);
+            border-left: 4px solid transparent;
+        }
+
+        .feature-item:hover {
+            border-left-color: var(--accent-orange);
+            transform: translateX(10px);
+            background: var(--pale-green);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.3rem;
+        }
+
+        .feature-text strong {
+            display: block;
+            color: var(--primary-green);
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-text span {
+            color: var(--medium-text);
+            font-size: 0.95rem;
+        }
+
+        .about-images {
+            position: relative;
+            height: 650px;
+        }
+
+        .about-image-main {
+            position: absolute;
+            width: 85%;
+            height: 450px;
+            top: 0;
+            right: 0;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            z-index: 2;
+        }
+
+        .about-image-secondary {
+            position: absolute;
+            width: 60%;
+            height: 300px;
+            bottom: 0;
+            left: 0;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+            z-index: 3;
+            border: 8px solid var(--white);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-slow);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.1);
+        }
+
+        .experience-badge {
+            position: absolute;
+            bottom: 120px;
+            right: 50px;
+            background: var(--gradient-accent);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            box-shadow: var(--shadow-xl);
+            z-index: 4;
+        }
+
+        .experience-number {
+            font-size: 3.5rem;
+            font-weight: 900;
+            display: block;
+            line-height: 1;
+        }
+
+        .experience-text {
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        /* ============================================
+           SERVICES OVERVIEW SECTION
+           ============================================ */
+        .services-overview {
+            background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-overview::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.05" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header-light h2,
+        .section-header-light p {
+            color: var(--white);
+        }
+
+        .section-subtitle {
+            display: inline-block;
+            color: var(--accent-orange);
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            color: var(--primary-green);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .section-description {
+            font-size: 1.2rem;
+            color: var(--medium-text);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.98);
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            transition: all var(--transition-fast);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-accent);
+            transform: scaleX(0);
+            transition: transform var(--transition-fast);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-icon {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, var(--pale-green), var(--accent-green));
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--primary-green);
+            margin-bottom: 1.5rem;
+            transition: all var(--transition-fast);
+        }
+
+        .service-card:hover .service-icon {
+            background: var(--gradient-primary);
+            color: var(--white);
+            transform: rotateY(180deg);
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+        }
+
+        .service-description {
+            color: var(--medium-text);
+            line-height: 1.7;
+        }
+
+        /* ============================================
+           RECYCLING MATERIALS SECTION
+           ============================================ */
+        .materials {
+            background: var(--light-bg);
+            position: relative;
+        }
+
+        .materials-intro {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 4rem;
+        }
+
+        .material-filters {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .filter-btn {
+            background: var(--white);
+            color: var(--dark-text);
+            padding: 0.85rem 2rem;
+            border-radius: var(--radius-xl);
+            font-weight: 600;
+            border: 2px solid var(--border);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--gradient-primary);
+            color: var(--white);
+            border-color: var(--primary-green);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .materials-showcase {
+            display: grid;
+            gap: 4rem;
+        }
+
+        .material-card {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            transition: all var(--transition-normal);
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .material-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .material-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-10px);
+        }
+
+        .material-card:nth-child(even) {
+            direction: rtl;
+        }
+
+        .material-card:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .material-info {
+            padding: 3.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .material-category {
+            display: inline-block;
+            background: var(--pale-green);
+            color: var(--primary-green);
+            padding: 0.5rem 1.25rem;
+            border-radius: var(--radius-xl);
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            width: fit-content;
+        }
+
+        .material-title {
+            font-size: 2.5rem;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .material-title i {
+            color: var(--accent-orange);
+            font-size: 2.2rem;
+        }
+
+        .material-description {
+            font-size: 1.1rem;
+            color: var(--medium-text);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .material-list {
+            list-style: none;
+        }
+
+        .material-list li {
+            padding: 1rem 1.5rem;
+            padding-left: 3rem;
+            position: relative;
+            font-size: 1.05rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+            background: var(--light-bg);
+            border-radius: var(--radius-sm);
+            border-left: 4px solid var(--light-green);
+            transition: all var(--transition-fast);
+        }
+
+        .material-list li:hover {
+            border-left-color: var(--accent-orange);
+            padding-left: 3.5rem;
+            background: var(--pale-green);
+            transform: translateX(10px);
+        }
+
+        .material-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 1rem;
+            color: var(--white);
+            background: var(--gradient-primary);
+            width: 28px;
+            height: 28px;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .material-image-wrapper {
+            position: relative;
+            overflow: hidden;
+            min-height: 400px;
+        }
+
+        .material-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-slow);
+        }
+
+        .material-card:hover .material-image-wrapper img {
+            transform: scale(1.15);
+        }
+
+        .material-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(27,94,32,0.8), transparent);
+            opacity: 0;
+            transition: opacity var(--transition-fast);
+            display: flex;
+            align-items: flex-end;
+            padding: 2rem;
+        }
+
+        .material-card:hover .material-overlay {
+            opacity: 1;
+        }
+
+        .overlay-text {
+            color: var(--white);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* ============================================
+           AGENCIES & FRANCHISE SECTIONS
+           ============================================ */
+        .agencies-franchise {
+            background: var(--white);
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+
+        .info-card {
+            background: var(--light-bg);
+            padding: 3rem;
+            border-radius: var(--radius-xl);
+            border-top: 5px solid var(--primary-green);
+            transition: all var(--transition-fast);
+        }
+
+        .info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-top-color: var(--accent-orange);
+        }
+
+        .info-card-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .info-card h3 {
+            font-size: 1.8rem;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+        }
+
+        .info-card p {
+            color: var(--medium-text);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-card ul {
+            list-style: none;
+        }
+
+        .info-card ul li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--medium-text);
+        }
+
+        .info-card ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-orange);
+            font-weight: bold;
+        }
+
+        /* ============================================
+           GALLERY SECTION WITH LIGHTBOX
+           ============================================ */
+        .gallery {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8f5e9 100%);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            cursor: pointer;
+            aspect-ratio: 4/3;
+            transition: all var(--transition-fast);
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-hover);
+            z-index: 10;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-slow);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.2);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(27,94,32,0.95), transparent);
+            color: var(--white);
+            padding: 2rem 1.5rem 1.5rem;
+            transform: translateY(100%);
+            transition: transform var(--transition-fast);
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        .gallery-caption h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-caption p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .gallery-zoom {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 107, 53, 0.95);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.8rem;
+            transition: transform var(--transition-fast);
+        }
+
+        .gallery-item:hover .gallery-zoom {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        /* Lightbox Modal */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90vw;
+            max-height: 90vh;
+            position: relative;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 90vh;
+            border-radius: var(--radius-md);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            color: var(--white);
+            font-size: 3rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            transition: transform var(--transition-fast);
+        }
+
+        .lightbox-close:hover {
+            transform: rotate(90deg);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--white);
+            border: none;
+            font-size: 3rem;
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            border-radius: var(--radius-sm);
+            transition: all var(--transition-fast);
+        }
+
+        .lightbox-nav:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .lightbox-prev { left: 2rem; }
+        .lightbox-next { right: 2rem; }
+
+        /* ============================================
+           TESTIMONIALS SECTION
+           ============================================ */
+        .testimonials {
+            background: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonials::before {
+            content: '"';
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 30rem;
+            color: var(--pale-green);
+            opacity: 0.3;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        .testimonials-slider {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .testimonial-card {
+            background: var(--light-bg);
+            padding: 3.5rem;
+            border-radius: var(--radius-xl);
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            position: relative;
+        }
+
+        .testimonial-quote {
+            font-size: 1.3rem;
+            color: var(--medium-text);
+            line-height: 1.9;
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .author-info h4 {
+            color: var(--primary-green);
+            font-size: 1.3rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .author-info p {
+            color: var(--light-text);
+            font-size: 0.95rem;
+        }
+
+        .stars {
+            color: var(--accent-yellow);
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* ============================================
+           CONTACT SECTION
+           ============================================ */
+        .contact {
+            background: linear-gradient(135deg, #e8f5e9 0%, #fff 100%);
+            position: relative;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contact-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            transition: all var(--transition-fast);
+            border-left: 5px solid transparent;
+        }
+
+        .contact-card:hover {
+            border-left-color: var(--accent-orange);
+            transform: translateX(10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-card-icon {
+            width: 70px;
+            height: 70px;
+            min-width: 70px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.8rem;
+            transition: all var(--transition-fast);
+        }
+
+        .contact-card:hover .contact-card-icon {
+            transform: rotate(360deg) scale(1.1);
+        }
+
+        .contact-card-content h4 {
+            color: var(--primary-green);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card-content p {
+            color: var(--medium-text);
+            font-size: 1rem;
+        }
+
+        .contact-form-wrapper {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: var(--primary-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border: 2px solid var(--border);
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            font-family: 'Open Sans', sans-serif;
+            transition: all var(--transition-fast);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.1);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 1.25rem;
+            border: none;
+            border-radius: var(--radius-xl);
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        footer {
+            background: var(--primary-green);
+            color: var(--white);
+            padding: 5rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand .logo {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-brand p {
+            opacity: 0.9;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.2rem;
+            transition: all var(--transition-fast);
+        }
+
+        .social-link:hover {
+            background: var(--accent-orange);
+            transform: translateY(-5px);
+        }
+
+        .footer-column h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.75rem;
+        }
+
+        .footer-column h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-orange);
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            opacity: 0.9;
+            transition: all var(--transition-fast);
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--accent-orange);
+            transform: translateX(10px);
+        }
+
+        .footer-contact li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .footer-contact i {
+            color: var(--accent-orange);
+            margin-top: 0.25rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 2rem;
+            text-align: center;
+            opacity: 0.9;
+        }
+
+        /* ============================================
+           RESPONSIVE DESIGN
+           ============================================ */
+        @media (max-width: 1200px) {
+            .hero-title { font-size: 4rem; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 1024px) {
+            .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .about-images { height: 500px; }
+            .material-card { grid-template-columns: 1fr; }
+            .material-card:nth-child(even) { direction: ltr; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .nav-menu { display: none; }
+            .mobile-toggle { display: block; }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 3rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+            .section-title { font-size: 2.5rem; }
+            .stats-bar { grid-template-columns: 1fr; }
+            .services-grid { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .container { padding: 0 1.5rem; }
+            .section-padding { padding: 4rem 0; }
+        }
+
+        /* ============================================
+           SCROLL ANIMATIONS
+           ============================================ */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease;
+        }
+
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease;
+        }
+
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    </style>
+
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)'], ['$$', '$$'], ['\\[', '\\]']], 
+                displayMath: []
+            },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body>
+
+    <!-- ============================================
+         NAVIGATION BAR
+         ============================================ -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <i class="fas fa-recycle"></i>
+                Anti-Waste
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About Us</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#materials" class="nav-link">Products</a></li>
+                <li><a href="#agencies" class="nav-link">Agencies</a></li>
+                <li><a href="#franchise" class="nav-link">Franchise</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#contact" class="nav-link nav-cta">Contact Us</a></li>
+            </ul>
+
+            <div class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================
+         HERO SECTION
+         ============================================ -->
+    <section id="home" class="hero">
+        <div class="hero-background"></div>
+        
+        <div class="hero-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-leaf"></i>
+                Established 1999 • Professional Waste Management
+            </div>
+            
+            <h1 class="hero-title">Anti-Waste<br>Mokopane</h1>
+            
+            <p class="hero-subtitle">
+                Leading waste management and recycling solutions serving Mokopane and surrounding areas. 
+                Committed to environmental sustainability and community development since 1999.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#materials" class="btn-primary">
+                    <i class="fas fa-recycle"></i>
+                    Explore Our Services
+                </a>
+                <a href="#contact" class="btn-secondary">
+                    <i class="fas fa-phone-alt"></i>
+                    Get in Touch
+                </a>
+            </div>
+
+            <div class="stats-bar">
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <span class="stat-number" data-count="140">0</span>
+                    <span class="stat-label">Daily Customers Served</span>
+                </div>
+
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <span class="stat-number" data-count="80">0</span>
+                    <span class="stat-label">Employees</span>
+                </div>
+
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <span class="stat-number" data-count="25">0</span>
+                    <span class="stat-label">Years of Experience</span>
+                </div>
+
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <span class="stat-number" data-count="8">0</span>
+                    <span class="stat-label">Recycling Categories</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         ABOUT SECTION
+         ============================================ -->
+    <section id="about" class="about section-padding">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content" data-aos="fade-right">
+                    <span class="about-subtitle">About Our Company</span>
+                    <h2 class="about-title">Building a Sustainable Future Since 1999</h2>
+                    
+                    <p class="about-description">
+                        <strong>Anti Waste Mokopane</strong> was established in 1999 by owners <strong>Mark and Marie Scholtz</strong>. 
+                        Since then, we have been proudly trading in Mokopane and surrounding areas, providing comprehensive 
+                        waste management and recycling services that make a real difference in our community.
+                    </p>
+
+                    <ul class="feature-list">
+                        <li class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-truck"></i>
+                            </div>
+                            <div class="feature-text">
+                                <strong>140+ Daily Customers</strong>
+                                <span>Servicing businesses and residents 5 days a week across Mokopane region</span>
+                            </div>
+                        </li>
+
+                        <li class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <div class="feature-text">
+                                <strong>Major Retail Partnerships</strong>
+                                <span>Working with Game, Shoprite, Edgars, CNA, Clicks, Pep and more chain stores</span>
+                            </div>
+                        </li>
+
+                        <li class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div class="feature-text">
+                                <strong>80+ Direct Employees</strong>
+                                <span>Creating meaningful employment opportunities in our local community</span>
+                            </div>
+                        </li>
+
+                        <li class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-store-alt"></i>
+                            </div>
+                            <div class="feature-text">
+                                <strong>Buy Back Centres</strong>
+                                <span>Operating centres to assist and support community recycling initiatives</span>
+                            </div>
+                        </li>
+
+                        <li class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="feature-text">
+                                <strong>Emergency Services</strong>
+                                <span>Providing refuse removal during critical situations such as strikes</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="about-images" data-aos="fade-left">
+                    <div class="about-image about-image-main">
+                        <img src="https://i.nekoai.one/upload/f3d81e96-c014-4dce-b0b3-482f047e5120-crop.jpg" alt="Anti-Waste Buy Back Centre">
+                    </div>
+                    
+                    <div class="about-image about-image-secondary">
+                        <img src="https://i.nekoai.one/upload/e0cfc5bd-0baf-41df-a386-f8b5e8f7e8f7-crop.jpg" alt="Media Coverage">
+                    </div>
+
+                    <div class="experience-badge">
+                        <span class="experience-number">25+</span>
+                        <span class="experience-text">Years of<br>Excellence</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SERVICES OVERVIEW SECTION
+         ============================================ -->
+    <section id="services" class="services-overview section-padding">
+        <div class="container">
+            <div class="section-header section-header-light" data-aos="fade-up">
+                <span class="section-subtitle" style="color: var(--accent-orange);">What We Offer</span>
+                <h2 class="section-title" style="color: white;">Our Comprehensive Services</h2>
+                <p class="section-description" style="color: rgba(255,255,255,0.9);">
+                    We provide end-to-end waste management solutions tailored to meet the needs of businesses, 
+                    communities, and individuals committed to environmental sustainability.
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="service-icon">
+                        <i class="fas fa-truck-loading"></i>
+                    </div>
+                    <h3 class="service-title">Regular Collection Service</h3>
+                    <p class="service-description">
+                        Reliable daily waste collection serving over 140 customers, 5 days a week. 
+                        We ensure timely pickup and proper disposal of all accepted materials.
+                    </p>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3 class="service-title">Recycling Programs</h3>
+                    <p class="service-description">
+                        Comprehensive recycling accepting 8 categories including paper, cardboard, 
+                        various plastics (LDPE, HDPE, PET, PP), and mixed materials.
+                    </p>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <h3 class="service-title">Buy Back Centres</h3>
+                    <p class="service-description">
+                        Community-focused facilities where individuals can bring recyclable materials 
+                        and receive payment, supporting local economy and environment.
+                    </p>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3 class="service-title">Commercial Solutions</h3>
+                    <p class="service-description">
+                        Tailored waste management programs for major retail chains and businesses, 
+                        including Game, Shoprite, Edgars, CNA, Clicks, and Pep.
+                    </p>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3 class="service-title">Emergency Response</h3>
+                    <p class="service-description">
+                        Rapid refuse removal during critical situations such as strikes or special events, 
+                        ensuring community cleanliness and health safety.
+                    </p>
+                </div>
+
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-icon">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
+                    <h3 class="service-title">Employment Creation</h3>
+                    <p class="service-description">
+                        Providing sustainable employment for over 80 people directly, contributing 
+                        to economic development and skills training in our community.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         RECYCLING MATERIALS SECTION
+         ============================================ -->
+    <section id="materials" class="materials section-padding">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Materials We Accept</span>
+                <h2 class="section-title">Comprehensive Recycling Program</h2>
+                <p class="section-description">
+                    At Anti-Waste, we accept a wide variety of recyclable materials. Our program helps reduce 
+                    environmental impact while supporting our community through sustainable practices.
+                </p>
+            </div>
+
+            <div class="materials-intro" data-aos="fade-up">
+                <p style="font-size: 1.15rem; color: var(--medium-text);">
+                    Select a category below to learn more about what materials we accept, or browse all categories 
+                    to discover how you can contribute to environmental sustainability.
+                </p>
+            </div>
+
+            <div class="material-filters" data-aos="fade-up">
+                <button class="filter-btn active" onclick="filterMaterials('all')">All Materials</button>
+                <button class="filter-btn" onclick="filterMaterials('paper')">Paper Products</button>
+                <button class="filter-btn" onclick="filterMaterials('plastic')">Plastic Types</button>
+                <button class="filter-btn" onclick="filterMaterials('mixed')">Mixed Items</button>
+            </div>
+
+            <div class="materials-showcase">
+
+                <!-- K4 Cardboard -->
+                <div class="material-card" data-category="paper" data-aos="fade-up">
+                    <div class="material-info">
+                        <span class="material-category">Paper Category</span>
+                        <h3 class="material-title">
+                            <i class="fas fa-box"></i>
+                            K4 - Cardboards & Boxes
+                        </h3>
+                        <p class="material-description">
+                            We recycle all types of cardboard packaging materials, from shipping boxes to product packaging. 
+                            Clean, dry cardboard is essential for quality recycling. This includes corrugated boxes, 
+                            paperboard packaging, and carton materials.
+                        </p>
+                        <ul class="material-list">
+                            <li>Cardboards (all types)</li>
+                            <li>Boxes (shipping & product)</li>
+                            <li>Packaging cartons</li>
+                            <li>Corrugated materials</li>
+                        </ul>
+                    </div>
+                    <div class="material-image-wrapper">
+                        <img src="https://i.nekoai.one/upload/cfb5e095-dba3-4584-b5e4-7c6c7d7e5c89-crop.jpg" alt="K4 Cardboards and Boxes">
+                        <div class="material-overlay">
+                            <span class="overlay-text">Click to learn more →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Common Mix -->
+                <div class="material-card" data-category="mixed" data-aos="fade-up">
+                    <div class="material-info">
+                        <span class="material-category">Mixed Category</span>
+                        <h3 class="material-title">
+                            <i class="fas fa-palette"></i>
+                            Common Mix - Mixed Paper Products
+                        </h3>
+                        <p class="material-description">
+                            Mixed paper products from household and office use are recycled into new paper products. 
+                            This category accepts various colored papers and paper-based food containers that don't 
+                            fit into pure white paper categories.
+                        </p>
+                        <ul class="material-list">
+                            <li>Coloured Office Paper (with or without print)</li>
+                            <li>Cereal Boxes</li>
+                            <li>Soup Containers</li>
+                            <li>Mixed paper products</li>
+                        </ul>
+                    </div>
+                    <div class="material-image-wrapper">
+                        <img src="https://i.nekoai.one/upload/c0a4c7d8-e5f4-43ea-91eb-8e5c6e7d8f9a-crop.jpg" alt="Common Mix Materials">
+                        <div class="material-overlay">
+                            <span class="overlay-text">Click to learn more →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HL1 White Paper -->
+                <div class="material-card" data-category="paper" data-aos="fade-up">
+                    <div class="material-info">
+                        <span class="material-category">Paper Category</span>
+                        <h3 class="material-title">
+                            <i class="fas fa-file-alt"></i>
+                            HL 1 - White & Office Paper
+                        </h3>
+                        <p class="material-description">
+                            High-quality paper recycling for office and printing waste. We accept both printed and 
+                            unprinted white paper products. This premium category ensures the highest quality recycling 
+                            output for new paper production.
+                        </p>
+                        <ul class="material-list">
+                            <li>White Paper (all grades)</li>
+                            <li>Office Paper (with or without print)</li>
+                            <li>Printing paper waste</li>
+                            <li>Document paper</li>
+                        </ul>
+                    </div>
+                    <div class="material-image-wrapper">
+                        <img src="https://i.nekoai.one/upload/d4e5f6a7-b8c9-4def-a0b1-c2d3e4f5a6b7-crop.jpg" alt="White and Office Paper">
+                        <div class="material-overlay">
+                            <span class="overlay-text">Click to learn more →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LDPE Soft Plastic -->
+                <div class="material-card" data-category="plastic" data-aos="fade-up">
+                    <div class="material-info">
+                        <span class="material-category">Plastic Category</span>
+                        <h3 class="material-title">
+                            <i class="fas fa-shopping-bag"></i>
+                            LDPE - Soft Plastic
+                        </h3>
+                        <p class="material-description">
+                            Low-Density Polyethylene plastics including plastic bags, wrapping films, and other flexible 
+                            plastic packaging. These soft plastics are recycled into new bags, construction materials, 
+                            and various plastic products.
+                        </p>
+                        <ul class="material-list">
+                            <li>Soft Plastic (all types)</li>
+                            <li>Plastic shopping bags</li>
+                            <li>Wrapping films</li>
+                            <li>Flexible packaging</li>
+                        </ul>
+                    </div>
+                    <div class="material-image-wrapper">
+                        <img src="https://i.nekoai.one/upload/e5f6a7b8-c9d0-4efg-b1c2-d3e4f5a6b7c8-crop.jpg" alt="LDPE Soft Plastic">
+                        <div class="material-overlay">
+                            <span class="overlay-text">Click to learn more →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HDPE Hard Plastic -->
+                <div class="material-card" data-category="plastic" data-aos="fade-up">
+                    <div class="material-info">
+                        <span class="material-category">Plastic Category</span>
+                        <h3 class="material-title">
+                            <i class="fas fa-wine-bottle"></i>
+                            HDPE - Hard Plastic
+                        </h3>
+                        <p class="material-description">
+                            High-Density Polyethylene rigid plastics used in containers, bottles, and durable plastic items. 
+                            These sturdy plastics are highly recyclable and transformed into new containers, pipes, 
+                            and outdoor furniture.
+                        </p>
+                        <ul class="material-list">
+                            <li>Hard Plastic items</li>
+                            <li>Milk Bottles & Jugs</li>
+                            <li>Plastic Crates</li>
+                            <li>Durable containers</li>
+                        </ul>
+                    </div>
+                    <div class="material-image-wrapper">
+                        <img src="https://i.nekoai.one/upload/f6a7b8c9-d0e1-4fgh-c2d3-e4f5a6b7c8d9-crop.jpg" alt="HDPE Hard Plastic">
+                        <div class="material-overlay">
+                            <span class="overlay-text">Click to learn more →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LLDE Wrapping Plastic -->
+                <div class="material-card" data-category="plastic" data-aos="fade-up">
+                    <div class="material-info">
+                        <span class="material-category">Plastic Category</span>
+                        <h3 class="material-title">
+                            <i class="fas fa-tape"></i>
+                            LLDE - Wrapping Plastic
+                        </h3>
+                        <p class="material-description">
+                            Linear Low-Density Polyethylene used primarily for stretch wrap and protective packaging materials. 
+                            Commonly found in industrial and commercial settings for securing pallets and protecting goods.
+                        </p>
+                        <ul class="material-list">
+                            <li>Wrapping Plastic film</li>
+                            <li>Stretch wrap</li>
+                            <li>Protective packaging</li>
+                            <li>Pallet wrap</li>
+                        </ul>
+                    </div>
+                    <div class="material-image-wrapper">
+                        <img src="https://i.nekoai.one/upload/a7b8c9d0-e1f2-4ghi-d3e4-f5a6b7c8d9e0-crop.jpg" alt="LLDE Wrapping Plastic">
+                        <div class="material-overlay">
+                            <span class="overlay-text">Click to learn more →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PET Beverage -->
+                <div class="material-card" data-category="plastic" data-aos="fade-up">
+                    <div class="material-info">
+                        <span class="material-category">Plastic Category</span>
+                        <h3 class="material-title">
+                            <i class="fas fa-water"></i>
+                            PET - Beverage Containers
+                        </h3>
+                        <p class="material-description">
+                            Polyethylene Terephthalate used extensively for beverage bottles and food containers. 
+                            One of the most commonly recycled plastics, PET can be transformed into new bottles, 
+                            polyester fiber, and many other products.
+                        </p>
+                        <ul class="material-list">
+                            <li>Beverage Bottles (all types)</li>
+                            <li>Water Bottles</li>
+                            <li>Soda Bottles</li>
+                            <li>Food Containers</li>
+                        </ul>
+                    </div>
+                    <div class="material-image-wrapper">
+                        <img src="https://i.nekoai.one/upload/b8c9d0e1-f2g3-4hij-e4f5-a6b7c8d9e0f1-crop.jpg" alt="PET Beverage Containers">
+                        <div class="material-overlay">
+                            <span class="overlay-text">Click to learn more →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PP Polypropylene -->
+                <div class="material-card" data-category="plastic" data-aos="fade-up">
+                    <div class="material-info">
+                        <span class="material-category">Plastic Category</span>
+                        <h3 class="material-title">
+                            <i class="fas fa-chair"></i>
+                            PP - Polypropylene Products
+                        </h3>
+                        <p class="material-description">
+                            Polypropylene durable plastics used in containers, caps, and furniture items. Known for its 
+                            high heat resistance and strength, PP is recycled into automotive parts, industrial fibers, 
+                            and new consumer products.
+                        </p>
+                        <ul class="material-list">
+                            <li>Hard Buckets & Pails</li>
+                            <li>Bottle Caps & Closures</li>
+                            <li>Plastic Garden Chairs</li>
+                            <li>Kitchenware items</li>
+                        </ul>
+                    </div>
+                    <div class="material-image-wrapper">
+                        <img src="https://i.nekoai.one/upload/c9d0e1f2-g3h4-4ijk-f5a6-b7c8d9e0f1a2-crop.jpg" alt="PP Polypropylene Products">
+                        <div class="material-overlay">
+                            <span class="overlay-text">Click to learn more →</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         AGENCIES SECTION
+         ============================================ -->
+    <section id="agencies" class="agencies-franchise section-padding">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Our Network</span>
+                <h2 class="section-title">Agencies & Partners</h2>
+                <p class="section-description">
+                    We work closely with various agencies, government bodies, and community organizations 
+                    to deliver comprehensive waste management solutions throughout the region.
+                </p>
+            </div>
+
+            <div class="content-grid">
+                <div class="info-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="info-card-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3>Government Agencies</h3>
+                    <p>We collaborate with municipal and provincial environmental agencies to ensure compliance with waste management regulations and promote sustainable practices.</p>
+                    <ul>
+                        <li>Environmental compliance partnerships</li>
+                        <li>Waste management policy implementation</li>
+                        <li>Community cleanup initiatives</li>
+                        <li>Regulatory adherence programs</li>
+                    </ul>
+                </div>
+
+                <div class="info-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="info-card-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Retail Partners</h3>
+                    <p>Major retail chains trust us with their waste management needs, creating a robust network of commercial recycling operations.</p>
+                    <ul>
+                        <li>Game stores partnership</li>
+                        <li>Shoprite group collaboration</li>
+                        <li>Edgars & CNA contracts</li>
+                        <li>Clicks & Pep agreements</li>
+                    </ul>
+                </div>
+
+                <div class="info-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="info-card-icon">
+                        <i class="fas fa-globe-africa"></i>
+                    </div>
+                    <h3>Environmental Organizations</h3>
+                    <p>Partnering with environmental NGOs and sustainability groups to advance recycling awareness and green initiatives.</p>
+                    <ul>
+                        <li>Educational outreach programs</li>
+                        <li>Community recycling drives</li>
+                        <li>Awareness campaigns</li>
+                        <li>Sustainability workshops</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FRANCHISE SECTION
+         ============================================ -->
+    <section id="franchise" class="section-padding" style="background: var(--light-bg);">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Business Opportunities</span>
+                <h2 class="section-title">Franchise Opportunities</h2>
+                <p class="section-description">
+                    Join the Anti-Waste family and become part of South Africa's growing waste management industry. 
+                    Our proven business model offers excellent returns while making a positive environmental impact.
+                </p>
+            </div>
+
+            <div class="content-grid">
+                <div class="info-card" data-aos="fade-up" data-aos-delay="0" style="border-top-color: var(--accent-orange);">
+                    <div class="info-card-icon" style="background: var(--gradient-accent);">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Why Franchise With Us?</h3>
+                    <p>Benefit from 25+ years of industry experience, established systems, and strong brand recognition.</p>
+                    <ul>
+                        <li>Proven business model since 1999</li>
+                        <li>Comprehensive training & support</li>
+                        <li>Established supplier networks</li>
+                        <li>Marketing & operational guidance</li>
+                        <li>Ongoing business development assistance</li>
+                    </ul>
+                </div>
+
+                <div class="info-card" data-aos="fade-up" data-aos-delay="100" style="border-top-color: var(--accent-orange);">
+                    <div class="info-card-icon" style="background: var(--gradient-accent);">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Ideal Franchise Candidates</h3>
+                    <p>We're looking for motivated entrepreneurs passionate about environmental sustainability and community service.</p>
+                    <ul>
+                        <li>Strong business acumen</li>
+                        <li>Commitment to environmental values</li>
+                        <li>Community-oriented mindset</li>
+                        <li>Leadership & management skills</li>
+                        <li>Available capital investment</li>
+                    </ul>
+                </div>
+
+                <div class="info-card" data-aos="fade-up" data-aos-delay="200" style="border-top-color: var(--accent-orange);">
+                    <div class="info-card-icon" style="background: var(--gradient-accent);">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Franchise Benefits</h3>
+                    <p>Enjoy multiple advantages when joining the Anti-Waste franchise network.</p>
+                    <ul>
+                        <li>Exclusive territorial rights</li>
+                        <li>Established customer base potential</li>
+                        <li>Brand recognition & trust</li>
+                        <li>Operational manuals & systems</li>
+                        <li>Negotiated supplier pricing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;" data-aos="fade-up">
+                <a href="#contact" class="btn-primary" style="font-size: 1.15rem; padding: 1.35rem 3.5rem;">
+                    <i class="fas fa-envelope"></i>
+                    Inquire About Franchising
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         GALLERY SECTION
+         ============================================ -->
+    <section id="gallery" class="gallery section-padding">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">See Us In Action</span>
+                <h2 class="section-title">Our Operations & Team</h2>
+                <p class="section-description">
+                    Meet our dedicated team and see our operations in action. Anti-Waste employs over 80 people directly, 
+                    creating meaningful employment opportunities in the Mokopane community.
+                </p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="0" onclick="openLightbox(0)">
+                    <img src="https://i.nekoai.one/upload/d0e1f2g3-h4i5-4jkl-g6b7-c8d9e0f1a2b3-crop.jpg" alt="Daily Collection Operations">
+                    <div class="gallery-caption">
+                        <h4>Daily Collection Operations</h4>
+                        <p>Our team serving customers across Mokopane area</p>
+                    </div>
+                    <div class="gallery-zoom">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100" onclick="openLightbox(1)">
+                    <img src="https://i.nekoai.one/upload/e1f2g3h4-i5j6-4klm-h7c8-d9e0f1a2b3c4-crop.jpg" alt="Recycling Processing">
+                    <div class="gallery-caption">
+                        <h4>Recycling Processing</h4>
+                        <p>Compressed cardboard bales ready for recycling</p>
+                    </div>
+                    <div class="gallery-zoom">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200" onclick="openLightbox(2)">
+                    <img src="https://i.nekoai.one/upload/f2g3h4i5-j6k7-4lmn-i8d9-e0f1a2b3c4d5-crop.jpg" alt="Our Dedicated Team">
+                    <div class="gallery-caption">
+                        <h4>Our Dedicated Team</h4>
+                        <p>The people behind our success story</p>
+                    </div>
+                    <div class="gallery-zoom">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300" onclick="openLightbox(3)">
+                    <img src="https://i.nekoai.one/upload/g3h4i5j6-k7l8-4mno-j9e0-f1a2b3c4d5e6-crop.jpg" alt="Collection Fleet">
+                    <div class="gallery-caption">
+                        <h4>Modern Fleet</h4>
+                        <p>State-of-the-art collection vehicles</p>
+                    </div>
+                    <div class="gallery-zoom">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <button class="lightbox-nav lightbox-prev" onclick="changeImage(-1)">❮</button>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="Gallery Image">
+        </div>
+        <button class="lightbox-nav lightbox-next" onclick="changeImage(1)">❯</button>
+    </div>
+
+    <!-- ============================================
+         TESTIMONIALS SECTION
+         ============================================ -->
+    <section class="testimonials section-padding">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Client Testimonials</span>
+                <h2 class="section-title">What People Say About Us</h2>
+            </div>
+
+            <div class="testimonials-slider" data-aos="fade-up">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-quote">
+                        "Anti-Waste has been our trusted waste management partner for over 10 years. Their reliability, 
+                        professionalism, and commitment to environmental sustainability make them stand out. The team is always 
+                        punctual and their service is exceptional."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JM</div>
+                        <div class="author-info">
+                            <h4>Johan Meyer</h4>
+                            <p>Manager, Game Store Mokopane</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         CONTACT SECTION
+         ============================================ -->
+    <section id="contact" class="contact section-padding">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Get In Touch</span>
+                <h2 class="section-title">Contact Us Today</h2>
+                <p class="section-description">
+                    We're here to help with all your waste management and recycling needs. Whether you're a business 
+                    looking for regular service or an individual wanting to recycle, we're ready to assist you.
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-info-cards" data-aos="fade-right">
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="contact-card-content">
+                            <h4>Contact Person</h4>
+                            <p>Mark Scholtz (Owner)</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="contact-card-content">
+                            <h4>Cell Phone</h4>
+                            <p>083 345 6172</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-card-content">
+                            <h4>Telephone</h4>
+                            <p>015 - 491 2654</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-card-content">
+                            <h4>Email Address</h4>
+                            <p>anti_waste@yahoo.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-card-content">
+                            <h4>Location</h4>
+                            <p>Mokopane & Surrounding Areas, Limpopo Province</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper" data-aos="fade-left">
+                    <h3 style="color: var(--primary-green); margin-bottom: 1.5rem; font-size: 1.8rem;">
+                        <i class="fas fa-paper-plane" style="color: var(--accent-orange);"></i>
+                        Send Us a Message
+                    </h3>
+                    
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" class="form-control" placeholder="Enter your full name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" class="form-control" placeholder="Enter your email address" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="Enter your phone number">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <select id="subject" class="form-control" required>
+                                <option value="">Select a subject...</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="collection">Waste Collection Service</option>
+                                <option value="recycling">Recycling Information</option>
+                                <option value="buyback">Buy Back Centre</option>
+                                <option value="commercial">Commercial Partnership</option>
+                                <option value="franchise">Franchise Opportunity</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Message *</label>
+                            <textarea id="message" class="form-control" placeholder="Tell us how we can help you..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#home" class="logo">
+                        <i class="fas fa-recycle"></i>
+                        Anti-Waste
+                    </a>
+                    <p>
+                        Professional waste management and recycling services committed to environmental sustainability 
+                        and community development since 1999. Serving Mokopane and surrounding areas with pride.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#materials">Products</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#materials">Waste Collection</a></li>
+                        <li><a href="#materials">Recycling Programs</a></li>
+                        <li><a href="#materials">Buy Back Centre</a></li>
+                        <li><a href="#agencies">Commercial Services</a></li>
+                        <li><a href="#franchise">Franchise Info</a></li>
+                        <li><a href="#contact">Emergency Response</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Mokopane, Limpopo Province<br>South Africa</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>083 345 6172<br>015 - 491 2654</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>anti_waste@yahoo.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <span>Mon - Fri: 8:00 AM - 5:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Anti-Waste Mokopane. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: var(--accent-orange);"></i> for Environmental Sustainability</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+                    Professional Waste Management & Recycling Since 1999 | Making Mokopane Greener Every Day 🌱
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+         JAVASCRIPT FUNCTIONALITY
+         ============================================ -->
+    <script>
+        // Initialize AOS (Animate on Scroll)
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+
+        // ============================================
+        // NAVBAR SCROLL EFFECT
+        // ============================================
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // ============================================
+        // ACTIVE NAV LINK ON SCROLL
+        // ============================================
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // ============================================
+        // COUNTER ANIMATION FOR STATS
+        // ============================================
+        const counters = document.querySelectorAll('.stat-number[data-count]');
+        let countersAnimated = false;
+
+        function animateCounters() {
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-count'));
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+
+                const updateCounter = () => {
+                    current += step;
+                    if (current < target) {
+                        counter.textContent = Math.floor(current) + '+';
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target + '+';
+                    }
+                };
+
+                updateCounter();
+            });
+        }
+
+        // Trigger counter animation when stats are visible
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !countersAnimated) {
+                    animateCounters();
+                    countersAnimated = true;
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsBar = document.querySelector('.stats-bar');
+        if (statsBar) {
+            statsObserver.observe(statsBar);
+        }
+
+        // ============================================
+        // MATERIAL FILTER FUNCTIONALITY
+        // ============================================
+        function filterMaterials(category) {
+            const cards = document.querySelectorAll('.material-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'grid';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 50);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300);
+                }
+            });
+        }
+
+        // ============================================
+        // LIGHTBOX GALLERY FUNCTIONALITY
+        // ============================================
+        const galleryImages = [
+            'https://i.nekoai.one/upload/d0e1f2g3-h4i5-4jkl-g6b7-c8d9e0f1a2b3-crop.jpg',
+            'https://i.nekoai.one/upload/e1f2g3h4-i5j6-4klm-h7c8-d9e0f1a2b3c4-crop.jpg',
+            'https://i.nekoai.one/upload/f2g3h4i5-j6k7-4lmn-i8d9-e0f1a2b3c4d5-crop.jpg',
+            'https://i.nekoai.one/upload/g3h4i5j6-k7l8-4mno-j9e0-f1a2b3c4d5e6-crop.jpg'
+        ];
+
+        let currentImageIndex = 0;
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            document.getElementById('lightbox-img').src = galleryImages[index];
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function changeImage(direction) {
+            currentImageIndex += direction;
+            if (currentImageIndex < 0) currentImageIndex = galleryImages.length - 1;
+            if (currentImageIndex >= galleryImages.length) currentImageIndex = 0;
+            document.getElementById('lightbox-img').src = galleryImages[currentImageIndex];
+        }
+
+        // Close lightbox on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') changeImage(-1);
+            if (e.key === 'ArrowRight') changeImage(1);
+        });
+
+        // Close lightbox on background click
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target.id === 'lightbox') closeLightbox();
+        });
+
+        // ============================================
+        // CONTACT FORM HANDLING
+        // ============================================
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            // Simple validation
+            if (!name || !email || !subject || !message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+
+            // Show success message (in real implementation, this would send to server)
+            alert(`Thank you ${name}! Your message has been received.\n\nWe will contact you soon at ${email}.\n\nSubject: ${subject}\n\nMessage: ${message}`);
+
+            // Reset form
+            this.reset();
+        });
+
+        // ============================================
+        // SMOOTH SCROLL FOR ANCHOR LINKS
+        // ============================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // ============================================
+        // SCROLL ANIMATIONS FOR ELEMENTS
+        // ============================================
+        const fadeElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right');
+
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeElements.forEach(el => fadeObserver.observe(el));
+
+        // ============================================
+        // PARALLAX EFFECT FOR HERO BACKGROUND
+        // ============================================
+        window.addEventListener('scroll', () => {
+            const heroBackground = document.querySelector('.hero-background');
+            if (heroBackground) {
+                const scrolled = window.pageYOffset;
+                heroBackground.style.transform = `scale(1.15) translateY(${scrolled * 0.4}px)`;
+            }
+        });
+
+        // ============================================
+        // MOBILE MENU TOGGLE (Future Enhancement)
+        // ============================================
+        const mobileToggle = document.getElementById('mobileToggle');
+        mobileToggle?.addEventListener('click', () => {
+            // Mobile menu functionality can be added here
+            alert('Mobile menu coming soon! For now, please use desktop view or scroll to navigate.');
+        });
+
+        // ============================================
+        // CONSOLE WELCOME MESSAGE
+        // ============================================
+        console.log('%c🌱 Anti-Waste Mokopane', 'font-size: 24px; font-weight: bold; color: #2E7D32;');
+        console.log('%cProfessional Waste Management & Recycling Since 1999', 'font-size: 14px; color: #666;');
+        console.log('%c📞 Contact: 083 345 6172 | ✉️ anti_waste@yahoo.com', 'font-size: 12px; color: #FF6B35;');
+    </script>
+
+</body>
+</html>
